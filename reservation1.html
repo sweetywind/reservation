@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link href='assets/style/reservation.css' rel='stylesheet' />
+<link href='assets/style/main.css' rel='stylesheet' />
+<script src='assets/style/main.js'></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialDate: new Date(),
+      editable: true,
+      selectable: true,
+      businessHours: true,
+      dayMaxEvents: true, // allow "more" link when too many events
+    });
+
+    calendar.render();
+  });
+
+</script>
+</head>
+<body>
+<div id="reservation">
+  <section class="tab-menu">
+    <ul>
+      <li class="on"><a href="#">예약현황</a></li>
+      <li><a href="#">예약하기</a></li>
+      <li><a href="#">예약 결제하기</a></li>
+      <li><a href="#">예약 확인 및 취소</a></li>
+    </ul>
+  </section>
+  <div class="situation">
+    <div class="site">
+      <ul>
+        <li class="on"><a href="#">사이트 배치도</a></li>
+        <li><a href="#">사이트 배치도</a></li>
+      </ul>
+    </div>
+    <div class="month">
+      <p class="current-month">2022.11</p>
+      <p class="today">오늘 : 2022.11.23(수)</p>
+    </div>
+    <section class="select">
+      <table>
+        <tbody>
+          <tr>
+            <td class="select-area">구역선택</td>
+            <td class="area1"><a href="#" class="on">테크동(주차별도) <span>총(15석)</span></a></td>
+            <td class="area2"><a href="#">차박동(주차별도) <span>총(15석)</span></a></td>
+          </tr>
+      </tbody>
+      </table>
+    </section>
+  </div>
+  <div id='calendar'></div>
+</div>
+</body>
+</html>
